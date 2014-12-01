@@ -1,0 +1,519 @@
+﻿
+/* ---------------------------------------- Site ---------------------------------------- */
+
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+}
+html {
+	height: 100%;
+	overflow-y: scroll;
+}
+body {
+	color: rgba(0,0,0,0.5);
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 100%; /* 16px */
+	line-height: 1.250; /* 20px */
+	height: 100%;
+}
+
+
+
+/* ---------------------------------------- Base ---------------------------------------- */
+
+/*  This section generally sets out the basic styles for the page.
+	Headings, lists, anchors etc are specificed here */
+
+
+/* --------------------------- Headings */
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4 {
+	display: block;
+	margin-bottom: 10px;
+	text-rendering: optimizeLegibility;
+}
+
+h1, .h1 {
+	font-size: 10px; /* 32px */
+	font-weight: bold;
+	line-height: 1.5; /* 32px */
+}
+h2, .h2 {
+	font-size: 10px; /* 32px */
+	line-height: 1.5; /* 32px */
+	margin-bottom: 20px;
+}
+h3, .h3 {
+	font-size: 1.125em; /* 18px */
+	font-weight: bold;
+	line-height: 1; /* 18px */
+}
+h4, .h4 {
+	font-size: 1em; /* 16px */
+	font-weight: bold;
+	line-height: 1; /* 16px */
+}
+
+
+/* --------------------------- Paragraph */
+p, .p {
+	font-size: 10px; /* 32px */
+	font-weight: bold;
+	line-height: 1.5; /* 32px */
+	margin-bottom: 10px;
+}
+
+
+/* --------------------------- Links */
+a {
+	color: rgba(0,0,0,0.7);
+	display: inline-block;
+	position: relative;
+	text-decoration: none;
+	transition: opacity 150ms ease-out;
+	-webkit-tap-highlight-color: transparent;
+	&::before {
+		background-color: rgba(0,0,0,0.7);
+		content: '';
+		height: 1px;
+		left: 0;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+	}
+}
+a:hover,
+a:focus {
+	opacity: 0.8;
+}
+
+
+/* --------------------------- List */
+ul, ol {
+	font-size: 10px; /* 32px */
+	font-weight: bold;
+	line-height: 1.5; /* 32px */
+}
+ul {
+	list-style: none;
+}
+
+ul li {
+	background: no-repeat 0 8px;
+	background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%224%22%20height%3D%224%22%20viewBox%3D%220%200%204%204%22%3E%3Ccircle%20fill%3D%22%231F1F1F%22%20cx%3D%222%22%20cy%3D%222%22%20r%3D%222%22%2F%3E%3C%2Fsvg%3E");
+	margin: 0 0 10px;
+	padding: 0 0 0 12px;
+	zoom: 1;
+}
+ol li {
+	margin: 0 0 10px 25px;
+}
+
+li > ul,
+li > ol {
+	font-size: 1em; /* 16px */
+	margin-top: 12px;
+	margin-bottom: 0;
+}
+
+ol li ul li {
+	margin-left: 0;
+}
+ul li ol li {
+	background: none;
+	padding: 0;
+}
+
+/* fallback */
+.no-svg li {
+	background-image: url(/images/dist/png/icon-bullet.png);
+}
+.no-svg ol li {
+	background-image: none;
+}
+
+
+/* ---------- List reset */
+/* ul is required for specificity */
+.list_reset {
+	font-size: 10px; /* 16px */
+	list-style: none;
+	padding: 0;
+}
+.list_reset li {
+	background: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* ---------- List inline */
+.list_inline {
+	overflow: hidden;
+}
+.list_inline li {
+	float: left;
+}
+
+
+/* --------------------------- Blockquote */
+blockquote {
+	font-size: 1.5em; /* 24px */
+	line-height: 1; /* 24px */
+	margin: 0 0 20px;
+}
+cite {
+	font-size: 0.875em; /* 14px */
+	line-height: 1; /* 14px */
+}
+
+
+/* --------------------------- Horizontal rule */
+hr, .hr {
+	display: block;
+	width: 100%;
+	height: 1px;
+	margin-bottom: 15px;
+	font-size: 0;
+	line-height: 0;
+	border: none;
+	border-bottom: 1px solid #999;
+}
+
+
+/* --------------------------- Highlight state */
+::-moz-selection {
+	background-color: #0082c8;
+	background-color: rgba(#0082c8, 0.8);
+	color: #fff;
+	text-shadow: none;
+}
+::selection {
+	background-color: #0082c8;
+	background-color: rgba(#0082c8, 0.8);
+	color: #fff;
+	text-shadow: none;
+}
+
+
+
+/* ---------------------------------------- Site layout ---------------------------------------- */
+
+.main_content {
+	margin: 200px 0 0 20px;
+	overflow: hidden;
+	position: relative;
+}
+
+header,
+footer {
+	left: 20px;
+	position: absolute;
+	z-index: 5;
+}
+header {
+	top: 20px;
+}
+footer {
+	bottom: 20px;
+}
+footer .list_inline li {
+	margin: 0 20px 0 0;
+}
+
+
+
+
+/* ---------------------------------------- Navigation ---------------------------------------- */
+
+/* ---------------------------- Primary nav */
+.nav_primary {
+	margin: 0 0 20px;
+}
+.nav_primary > li a {
+	display: block;
+	padding: 10px;
+}
+.nav_primary .is_current > a {
+	color: #663399;
+}
+
+
+/* --------------------------- Secondary nav */
+.nav_secondary {
+	margin: 0 0 20px;
+}
+.nav_secondary > li a {
+	display: block;
+}
+.nav_secondary .is_current > a {
+	color: #663399;
+}
+
+/* ---------- second level */
+.nav_secondary > li > ul {
+	border-top: 1px solid #d0d2d3;
+}
+
+/* ---------- second level and following */
+.nav_secondary > li ul {
+	padding: 4px 0;
+}
+.nav_secondary > li ul > li {
+	padding: 0 0 0 15px;
+}
+
+
+/* --------------------------- Support nav */
+.nav_support {
+}
+.nav_support li {
+}
+.nav_support .is_current {
+}
+
+
+
+/* ---------------------------------------- Lists ---------------------------------------- */
+
+.list_clients li {
+	font-weight: normal;
+	font-style: italic;
+}
+
+.list_clients .separator {
+	margin-bottom: 10px;
+}
+
+
+
+
+/* ---------------------------------------- Links/Buttons ---------------------------------------- */
+
+/* standard button */
+.button {
+	border: 1px solid #CCC;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 0.875em; /* 14px */
+	line-height: 1.5; /* 21px */
+	padding: 6px 10px;
+	text-align: center;
+}
+.button:hover,
+.button:focus {
+	background-color: #ebebeb;
+}
+
+
+/* ---------------------------------------- Modules ---------------------------------------- */
+
+.module {
+	position: relative;
+}
+
+/* promo */
+.module_promo > a {
+	display: block;
+}
+.module_promo img {
+	margin-bottom: 10px;
+}
+
+
+
+/* ---------------------------------------- Media block ---------------------------------------- */
+
+.media,
+.media .media_bd {
+	overflow: hidden;
+	zoom: 1;
+}
+.media .media_l {
+	float: left;
+	margin: 0 20px 20px 0;
+}
+.media .media_r {
+	float: right;
+	margin: 0 0 20px 20px;
+}
+
+
+
+/* ---------------------------------------- Forms ---------------------------------------- */
+
+form {
+	position: relative;
+	zoom: 1;
+}
+
+/* hover/focus - for accessbility, include new style to overwrite default */
+input:focus,
+textarea:focus {
+	border: 1px solid #b7b7b7;
+	outline: 0;
+}
+
+input,
+textarea {
+	border: 1px solid #E8E8E8;
+	font-size: 0.875em; /* 14px */
+	margin: 0 0 15px;
+	padding: 8px;
+	width: 100%;
+}
+
+/* ---------------------------- input file */
+input[type="file"] {
+	border: none;
+	padding: 0;
+}
+
+/* ---------------------------- input radio/checkbox */
+input[type="radio"],
+input[type="checkbox"] {
+	display: inline-block;
+	margin: 0 10px 0 0;
+	width: auto;
+	vertical-align: middle;
+}
+
+/* ---------------------------- select */
+select {
+	background: #ebebeb;
+	font-size: 0.875em; /* 14px */
+	line-height: 1; /* 14px */
+	padding: 8px;
+	width: 100%;
+	&:focus {
+		background-color: #b7b7b7;
+		outline: 0;
+	}
+}
+
+/* ---------------------------- label */
+label {
+	font-size: 0.875em; /* 14px */
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+
+
+/* ---------------------------------------- Table ---------------------------------------- */
+
+table {
+	width: 100%;
+	font-size: 0.875em; /* 12px */
+	line-height: 1.5; /* 18px */
+	margin-bottom: 15px;
+}
+table td {
+	padding: 7px 10px 6px 0;
+	border-bottom: 1px solid #eeeae1;
+}
+
+
+
+
+/* ---------------------------------------- Carousel ---------------------------------------- */
+
+section {
+	// height: 100%;
+	// width: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	// transform: translate3d(-50%, -50%, 0);
+}
+
+.swiper-container {
+	opacity: 0;
+	margin:0 auto;
+	position:relative;
+	overflow:hidden;
+	backface-visibility:hidden;
+	/* Fix of Webkit flickering */
+	z-index:1;
+	transition: opacity 150ms ease-out;
+	width: 100%;
+	height: 100%;
+	&.is_visible {
+		opacity: 1;
+	}
+}
+.swiper-wrapper {
+	position:relative;
+	height: 100%;
+	width:100%;
+	transition-property:transform, left, top;
+	transition-duration:0s;
+	transform:translate3d(0px,0,0);
+	transition-timing-function:ease;
+	box-sizing: content-box;
+}
+.swiper-free-mode > .swiper-wrapper {
+	transition-timing-function: ease-out;
+	margin: 0 auto;
+}
+.swiper-slide {
+	text-align: center;
+	float: left;
+	box-sizing: content-box;
+	&::before {
+		content: "";
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+		margin-right: 0;
+	}
+}
+
+/* IE10 Windows Phone 8 Fixes */
+.swiper-wp8-horizontal {
+	-ms-touch-action: pan-y;
+}
+.swiper-wp8-vertical {
+	-ms-touch-action: pan-x;
+}
+
+.swiper-slide img {
+	max-width: 80vw;
+	max-height: 80vh;
+	display: inline-block;
+	margin: 0 auto;
+    vertical-align: middle;
+}
+[data-carousel-direction] {
+	background-color: transparent;
+	cursor: pointer;
+	height: 100%;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	text-indent: 200%;
+	top: 0;
+	transition: background-color 150ms ease-out;
+	white-space: nowrap;
+	width: 50%;
+	z-index: 5;
+	-webkit-tap-highlight-color: transparent;
+	&:focus {
+		background-color: rgba(#fff, 0);
+		outline: none;
+	}
+}
+[data-carousel-direction="next"] {
+	left: auto;
+	right: 0;
+}
+[data-carousel-direction][disabled] {
+	&:hover,
+	&:focus {
+		background-color: transparent;
+	}
+}

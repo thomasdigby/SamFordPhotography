@@ -1,0 +1,114 @@
+﻿
+/* ---------------------------------------- Reset ---------------------------------------- */
+
+blockquote, body, button, caption, cite, dd, dl, fieldset, form, h1, h2, h3, h4, h5, h6, hr,
+iframe, input, label, legend, li, ol, p, pre, select, tbody, td, textarea, tfoot, th, thead, tr, ul {
+	border: 0;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+
+/* ---------------------------------------- Normalise ---------------------------------------- */
+
+/* global */
+html {
+	-webkit-text-size-adjust: 100%;
+		-ms-text-size-adjust: 100%;
+}
+
+/* base */
+a {
+	background: transparent;
+}
+b,
+strong {
+	font-weight: bold;
+}
+
+h1, h2, h3, h4 {
+	font-weight: normal;
+}
+cite {
+	font-style: normal;
+}
+small {
+	font-size: 80%;
+}
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.25em;
+}
+
+/* media */
+img {
+	border: 0;
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+/* tables */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	text-align: left;
+}
+td, th {
+	text-align: inherit;
+	vertical-align: top;
+}
+td img,
+iframe,
+.lt_ie8 img {
+	vertical-align: top;
+}
+
+/* form elements */
+button,
+label,
+select,
+input,
+textarea {
+	color: inherit;
+	display: block;
+	font: inherit;
+}
+button {
+	overflow: visible;
+}
+button,
+select {
+	text-transform: none;
+}
+button[disabled],
+html input[disabled] {
+	cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+optgroup {
+	font-weight: bold;
+}
+textarea {
+	overflow: auto;
+	resize: vertical;
+}

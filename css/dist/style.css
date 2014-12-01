@@ -1,0 +1,1327 @@
+/*
+	CSS Document for XXXXXXX
+	Build: XXXX XXXXXXX on behalf of SAS
+	Date: March 2014
+	Version: 3.1.0
+*/
+
+/* bulletproof font-face syntax */
+
+@font-face {
+	font-family: 'font';
+	src: url("/path/font.eot");
+	src: url("/path/font.eot?#iefix") format("embedded-opentype"), url("/path/font.woff") format("woff"), url("/path/font.ttf") format("truetype"), url("/path/font.svg#font") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* vars/mixins for sass and css reset */
+
+/* ---------------------------------------- Variables ---------------------------------------- */
+
+/* Typography baseline (in px/ratio) */
+
+/* 20px */
+
+/* Font stacks */
+
+/* Breakpoints (in px) */
+
+/* ---------------------------------------- Mixins ---------------------------------------- */
+
+/*
+	MEDIA QUERY
+	$point: breakpoint integer in px
+	$constraint: Constraint for media query (min/max)
+	$feature: Media feature of query (width/height)
+*/
+
+/* ---------------------------------------- Reset ---------------------------------------- */
+
+blockquote,
+body,
+button,
+caption,
+cite,
+dd,
+dl,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+iframe,
+input,
+label,
+legend,
+li,
+ol,
+p,
+pre,
+select,
+tbody,
+td,
+textarea,
+tfoot,
+th,
+thead,
+tr,
+ul {
+	border: 0;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+/* ---------------------------------------- Normalise ---------------------------------------- */
+
+/* global */
+
+html {
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+/* base */
+
+a {
+	background: transparent;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-weight: normal;
+}
+
+cite {
+	font-style: normal;
+}
+
+small {
+	font-size: 80%;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+/* media */
+
+img {
+	border: 0;
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+/* tables */
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	text-align: left;
+}
+
+td,
+th {
+	text-align: inherit;
+	vertical-align: top;
+}
+
+td img,
+iframe,
+.lt_ie8 img {
+	vertical-align: top;
+}
+
+/* form elements */
+
+button,
+label,
+select,
+input,
+textarea {
+	color: inherit;
+	display: block;
+	font: inherit;
+}
+
+button {
+	overflow: visible;
+}
+
+button,
+select {
+	text-transform: none;
+}
+
+button[disabled],
+html input[disabled] {
+	cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+optgroup {
+	font-weight: bold;
+}
+
+textarea {
+	overflow: auto;
+	resize: vertical;
+}
+
+/* base styles */
+
+/* ---------------------------------------- Grid ---------------------------------------- */
+
+/* --------------------------- Wrapper */
+
+.wrapper {
+	margin: 0 auto;
+	padding: 0 1.25em; /* 0 20px */
+	position: relative;
+	width: 100%;
+}
+
+/* ---------------------------------------- Site ---------------------------------------- */
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	overflow-y: scroll;
+}
+
+body {
+	color: rgba(0, 0, 0, 0.5);
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 100%; /* 16px */
+	line-height: 1.250; /* 20px */
+	height: 100%;
+}
+
+/* ---------------------------------------- Base ---------------------------------------- */
+
+/*  This section generally sets out the basic styles for the page.
+	Headings, lists, anchors etc are specificed here */
+
+/* --------------------------- Headings */
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+	display: block;
+	margin-bottom: 10px;
+	text-rendering: optimizeLegibility;
+}
+
+h1,
+.h1 {
+	font-size: 10px; /* 32px */
+	font-weight: bold;
+	line-height: 1.5; /* 32px */
+}
+
+h2,
+.h2 {
+	font-size: 10px; /* 32px */
+	line-height: 1.5; /* 32px */
+	margin-bottom: 20px;
+}
+
+h3,
+.h3 {
+	font-size: 1.125em; /* 18px */
+	font-weight: bold;
+	line-height: 1; /* 18px */
+}
+
+h4,
+.h4 {
+	font-size: 1em; /* 16px */
+	font-weight: bold;
+	line-height: 1; /* 16px */
+}
+
+/* --------------------------- Paragraph */
+
+p,
+.p {
+	font-size: 10px; /* 32px */
+	font-weight: bold;
+	line-height: 1.5; /* 32px */
+	margin-bottom: 10px;
+}
+
+/* --------------------------- Links */
+
+a {
+	color: rgba(0, 0, 0, 0.7);
+	display: inline-block;
+	position: relative;
+	text-decoration: none;
+	-webkit-transition: opacity 150ms ease-out;
+	transition: opacity 150ms ease-out;
+	-webkit-tap-highlight-color: transparent;
+}
+
+a::before {
+	background-color: rgba(0, 0, 0, 0.7);
+	content: '';
+	height: 1px;
+	left: 0;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+a:hover,
+a:focus {
+	opacity: 0.8;
+}
+
+/* --------------------------- List */
+
+ul,
+ol {
+	font-size: 10px; /* 32px */
+	font-weight: bold;
+	line-height: 1.5; /* 32px */
+}
+
+ul {
+	list-style: none;
+}
+
+ul li {
+	background: no-repeat 0 8px;
+	background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%224%22%20height%3D%224%22%20viewBox%3D%220%200%204%204%22%3E%3Ccircle%20fill%3D%22%231F1F1F%22%20cx%3D%222%22%20cy%3D%222%22%20r%3D%222%22%2F%3E%3C%2Fsvg%3E");
+	margin: 0 0 10px;
+	padding: 0 0 0 12px;
+	zoom: 1;
+}
+
+ol li {
+	margin: 0 0 10px 25px;
+}
+
+li > ul,
+li > ol {
+	font-size: 1em; /* 16px */
+	margin-top: 12px;
+	margin-bottom: 0;
+}
+
+ol li ul li {
+	margin-left: 0;
+}
+
+ul li ol li {
+	background: none;
+	padding: 0;
+}
+
+/* fallback */
+
+.no-svg li {
+	background-image: url(/images/dist/png/icon-bullet.png);
+}
+
+.no-svg ol li {
+	background-image: none;
+}
+
+/* ---------- List reset */
+
+/* ul is required for specificity */
+
+.list_reset {
+	font-size: 10px; /* 16px */
+	list-style: none;
+	padding: 0;
+}
+
+.list_reset li {
+	background: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* ---------- List inline */
+
+.list_inline {
+	overflow: hidden;
+}
+
+.list_inline li {
+	float: left;
+}
+
+/* --------------------------- Blockquote */
+
+blockquote {
+	font-size: 1.5em; /* 24px */
+	line-height: 1; /* 24px */
+	margin: 0 0 20px;
+}
+
+cite {
+	font-size: 0.875em; /* 14px */
+	line-height: 1; /* 14px */
+}
+
+/* --------------------------- Horizontal rule */
+
+hr,
+.hr {
+	display: block;
+	width: 100%;
+	height: 1px;
+	margin-bottom: 15px;
+	font-size: 0;
+	line-height: 0;
+	border: none;
+	border-bottom: 1px solid #999;
+}
+
+/* --------------------------- Highlight state */
+
+::-moz-selection {
+	background-color: #0082c8;
+	background-color: rgba(0, 130, 200, 0.8);
+	color: #fff;
+	text-shadow: none;
+}
+
+::selection {
+	background-color: #0082c8;
+	background-color: rgba(0, 130, 200, 0.8);
+	color: #fff;
+	text-shadow: none;
+}
+
+/* ---------------------------------------- Site layout ---------------------------------------- */
+
+.main_content {
+	margin: 200px 0 0 20px;
+	overflow: hidden;
+	position: relative;
+}
+
+header,
+footer {
+	left: 20px;
+	position: absolute;
+	z-index: 5;
+}
+
+header {
+	top: 20px;
+}
+
+footer {
+	bottom: 20px;
+}
+
+footer .list_inline li {
+	margin: 0 20px 0 0;
+}
+
+/* ---------------------------------------- Navigation ---------------------------------------- */
+
+/* ---------------------------- Primary nav */
+
+.nav_primary {
+	margin: 0 0 20px;
+}
+
+.nav_primary > li a {
+	display: block;
+	padding: 10px;
+}
+
+.nav_primary .is_current > a {
+	color: #663399;
+}
+
+/* --------------------------- Secondary nav */
+
+.nav_secondary {
+	margin: 0 0 20px;
+}
+
+.nav_secondary > li a {
+	display: block;
+}
+
+.nav_secondary .is_current > a {
+	color: #663399;
+}
+
+/* ---------- second level */
+
+.nav_secondary > li > ul {
+	border-top: 1px solid #d0d2d3;
+}
+
+/* ---------- second level and following */
+
+.nav_secondary > li ul {
+	padding: 4px 0;
+}
+
+.nav_secondary > li ul > li {
+	padding: 0 0 0 15px;
+}
+
+/* --------------------------- Support nav */
+
+/* ---------------------------------------- Lists ---------------------------------------- */
+
+.list_clients li {
+	font-weight: normal;
+	font-style: italic;
+}
+
+.list_clients .separator {
+	margin-bottom: 10px;
+}
+
+/* ---------------------------------------- Links/Buttons ---------------------------------------- */
+
+/* standard button */
+
+.button {
+	border: 1px solid #CCC;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 0.875em; /* 14px */
+	line-height: 1.5; /* 21px */
+	padding: 6px 10px;
+	text-align: center;
+}
+
+.button:hover,
+.button:focus {
+	background-color: #ebebeb;
+}
+
+/* ---------------------------------------- Modules ---------------------------------------- */
+
+.module {
+	position: relative;
+}
+
+/* promo */
+
+.module_promo > a {
+	display: block;
+}
+
+.module_promo img {
+	margin-bottom: 10px;
+}
+
+/* ---------------------------------------- Media block ---------------------------------------- */
+
+.media,
+.media .media_bd {
+	overflow: hidden;
+	zoom: 1;
+}
+
+.media .media_l {
+	float: left;
+	margin: 0 20px 20px 0;
+}
+
+.media .media_r {
+	float: right;
+	margin: 0 0 20px 20px;
+}
+
+/* ---------------------------------------- Forms ---------------------------------------- */
+
+form {
+	position: relative;
+	zoom: 1;
+}
+
+/* hover/focus - for accessbility, include new style to overwrite default */
+
+input:focus,
+textarea:focus {
+	border: 1px solid #b7b7b7;
+	outline: 0;
+}
+
+input,
+textarea {
+	border: 1px solid #E8E8E8;
+	font-size: 0.875em; /* 14px */
+	margin: 0 0 15px;
+	padding: 8px;
+	width: 100%;
+}
+
+/* ---------------------------- input file */
+
+input[type="file"] {
+	border: none;
+	padding: 0;
+}
+
+/* ---------------------------- input radio/checkbox */
+
+input[type="radio"],
+input[type="checkbox"] {
+	display: inline-block;
+	margin: 0 10px 0 0;
+	width: auto;
+	vertical-align: middle;
+}
+
+/* ---------------------------- select */
+
+select {
+	background: #ebebeb;
+	font-size: 0.875em; /* 14px */
+	line-height: 1; /* 14px */
+	padding: 8px;
+	width: 100%;
+}
+
+select:focus {
+	background-color: #b7b7b7;
+	outline: 0;
+}
+
+/* ---------------------------- label */
+
+label {
+	font-size: 0.875em; /* 14px */
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+/* ---------------------------------------- Table ---------------------------------------- */
+
+table {
+	width: 100%;
+	font-size: 0.875em; /* 12px */
+	line-height: 1.5; /* 18px */
+	margin-bottom: 15px;
+}
+
+table td {
+	padding: 7px 10px 6px 0;
+	border-bottom: 1px solid #eeeae1;
+}
+
+/* ---------------------------------------- Carousel ---------------------------------------- */
+
+section {
+	left: 0;
+	position: fixed;
+	top: 0;
+}
+
+.swiper-container {
+	opacity: 0;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden; /* Fix of Webkit flickering */
+	z-index: 1;
+	-webkit-transition: opacity 150ms ease-out;
+	transition: opacity 150ms ease-out;
+	width: 100%;
+	height: 100%;
+}
+
+.swiper-container.is_visible {
+	opacity: 1;
+}
+
+.swiper-wrapper {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	-webkit-transition-property: -webkit-transform, left, top;
+	transition-property: transform, left, top;
+	-webkit-transition-duration: 0s;
+	transition-duration: 0s;
+	-webkit-transform: translate3d(0px, 0, 0);
+	transform: translate3d(0px, 0, 0);
+	-webkit-transition-timing-function: ease;
+	transition-timing-function: ease;
+	box-sizing: content-box;
+}
+
+.swiper-free-mode > .swiper-wrapper {
+	-webkit-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+	margin: 0 auto;
+}
+
+.swiper-slide {
+	text-align: center;
+	float: left;
+	box-sizing: content-box;
+}
+
+.swiper-slide::before {
+	content: "";
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	margin-right: 0;
+}
+
+/* IE10 Windows Phone 8 Fixes */
+
+.swiper-wp8-horizontal {
+	-ms-touch-action: pan-y;
+}
+
+.swiper-wp8-vertical {
+	-ms-touch-action: pan-x;
+}
+
+.swiper-slide img {
+	max-width: 80vw;
+	max-height: 80vh;
+	display: inline-block;
+	margin: 0 auto;
+	vertical-align: middle;
+}
+
+[data-carousel-direction] {
+	background-color: transparent;
+	cursor: pointer;
+	height: 100%;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	text-indent: 200%;
+	top: 0;
+	-webkit-transition: background-color 150ms ease-out;
+	transition: background-color 150ms ease-out;
+	white-space: nowrap;
+	width: 50%;
+	z-index: 5;
+	-webkit-tap-highlight-color: transparent;
+}
+
+[data-carousel-direction]:focus {
+	background-color: rgba(255, 255, 255, 0);
+	outline: none;
+}
+
+[data-carousel-direction="next"] {
+	left: auto;
+	right: 0;
+}
+
+[data-carousel-direction][disabled]:hover,
+[data-carousel-direction][disabled]:focus {
+	background-color: transparent;
+}
+
+/* Compiled by grunt-svg-extend */
+
+/* OOCSS and utilities */
+
+/* ---------------------------------------- OOCSS ---------------------------------------- */
+
+/*  Reusable classes to be applied as modifiers to existing DOM elements
+	to reduce the amount of repetition in style declarations */
+
+/* --------------------------- Text size */
+
+.feature {
+	font-size: 1.313em; /* 21px */
+	line-height: 1.238; /* 26px */
+}
+
+/* --------------------------- Color */
+
+.highlight {
+	color: #7b9f17;
+}
+
+.contrast {
+	color: #7b2a84;
+}
+
+.light {
+	color: #eeeae1;
+}
+
+.dark {
+	color: #000;
+}
+
+.reverse {
+	color: #fff;
+}
+
+/* --------------------------- Background */
+
+.bg_light {
+	background-color: #eeeae1;
+}
+
+.bg_reverse {
+	background-color: #fff;
+}
+
+/* --------------------------- Borders */
+
+.border_b {
+	border-bottom: 1px solid #666;
+}
+
+.border_t {
+	border-top: 1px solid #666;
+}
+
+.shadow {
+	box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* --------------------------- Transitions */
+
+/*  Use as OOCSS class or add any additional selectors to each declaration */
+
+.trans_all {
+	-webkit-transition: all 150ms ease-out;
+	transition: all 150ms ease-out;
+}
+
+.trans_bg {
+	-webkit-transition: background-color 150ms ease-out;
+	transition: background-color 150ms ease-out;
+}
+
+.trans_color {
+	-webkit-transition: color 150ms ease-out;
+	transition: color 150ms ease-out;
+}
+
+.trans_opacity {
+	-webkit-transition: opacity 150ms ease-out;
+	transition: opacity 150ms ease-out;
+}
+
+/* ---------------------------------------- Utility ---------------------------------------- */
+
+/*  Used similary to OOCSS the utility classes allow common code
+	to the utilised throughout the site without duplicating CSS. */
+
+/* --------------------------- Margin */
+
+.margin_0 {
+	margin: 0 !important;
+}
+
+.margin_t_0 {
+	margin-top: 0 !important;
+}
+
+.margin_r_0 {
+	margin-right: 0 !important;
+}
+
+.margin_b_0 {
+	margin-bottom: 0 !important;
+}
+
+.margin_l_0 {
+	margin-left: 0 !important;
+}
+
+/* --------------------------- Padding */
+
+.padding_0 {
+	padding: 0 !important;
+}
+
+.padding_t_0 {
+	padding-top: 0 !important;
+}
+
+.padding_r_0 {
+	padding-right: 0 !important;
+}
+
+.padding_b_0 {
+	padding-bottom: 0 !important;
+}
+
+.padding_l_0 {
+	padding-left: 0 !important;
+}
+
+/* --------------------------- Border */
+
+.border_0 {
+	border: 0 !important;
+}
+
+.border_t_0 {
+	border-top: 0 !important;
+}
+
+.border_r_0 {
+	border-right: 0 !important;
+}
+
+.border_b_0 {
+	border-bottom: 0 !important;
+}
+
+.border_l_0 {
+	border-left: 0 !important;
+}
+
+/* --------------------------- Floats */
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+/* --------------------------- Text alignment */
+
+.text_l {
+	text-align: left;
+}
+
+.text_r {
+	text-align: right;
+}
+
+.text_c {
+	text-align: center;
+}
+
+/* --------------------------- Text case */
+
+.upper {
+	text-transform: uppercase;
+}
+
+.lower {
+	text-transform: lowercase;
+}
+
+/* --------------------------- Typography */
+
+.strong {
+	font-weight: bold;
+}
+
+.normal {
+	font-weight: normal;
+}
+
+.italic {
+	font-style: italic;
+}
+
+/* --------------------------- Display properties */
+
+.block {
+	display: block;
+}
+
+.overflow_a {
+	overflow: auto !important;
+}
+
+.overflow_h {
+	overflow: hidden !important;
+}
+
+/* --------------------------- Clear */
+
+.clearer {
+	clear: both;
+	font-size: 0;
+	height: 0;
+	line-height: 0;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+.spacer {
+	clear: both;
+	font-size: 0;
+	height: 20px;
+	line-height: 0;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+/* --------------------------- Misc */
+
+/* Hide only visually, but have it available for screenreaders */
+
+.hidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+/* Hide from both screenreaders and browsers */
+
+.no_display {
+	display: none !important;
+	visibility: hidden;
+}
+
+/* print stylesheet */
+
+/* ---------------------------------------- Print ---------------------------------------- */
+
+@media screen and (min-width: 45.3125em) {
+
+.wrapper { /*  .wrapper max-width is 40px more than site width to account for left/right gutters */
+	max-width: 64.000em; /* 1024px */
+	padding: 0 1.25em; /* 0 20px */
+}
+
+/* --------------------------- Rows */
+
+.row {
+	margin-left: -1.25em; /* -20px */
+}
+
+.row:before,
+.row:after {
+	display: table;
+	content: '';
+	line-height: 0;
+}
+
+.row:after {
+	clear: both;
+}
+
+/* ie */
+
+.lt_ie9 .row {
+	zoom: 1;
+}
+
+/* --------------------------- Columns */
+
+[class*="lap_"],
+[class*="desk_"] {
+	float: left;
+	min-height: 1px;
+	padding-left: 1.25em; /* 20px */
+}
+
+.lap_1_12 {
+	width: 8.333333333333332%;
+}
+
+.lap_1_6 {
+	width: 16.666666666666664%;
+}
+
+.lap_1_4 {
+	width: 25%;
+}
+
+.lap_1_3 {
+	width: 33.33333333333333%;
+}
+
+.lap_5_12 {
+	width: 41.66666666666667%;
+}
+
+.lap_1_2 {
+	width: 50%;
+}
+
+.lap_7_12 {
+	width: 58.333333333333336%;
+}
+
+.lap_2_3 {
+	width: 66.66666666666666%;
+}
+
+.lap_3_4 {
+	width: 75%;
+}
+
+.lap_5_6 {
+	width: 83.33333333333334%;
+}
+
+.lap_11_12 {
+	width: 91.66666666666666%;
+}
+
+.lap_full {
+	width: 100%;
+}
+
+/* --------------------------- Offsets */
+
+.push_lap_1_12 {
+	margin-left: 8.333333333333332%;
+}
+
+.push_lap_1_6 {
+	margin-left: 16.666666666666664%;
+}
+
+.push_lap_1_4 {
+	margin-left: 25%;
+}
+
+.push_lap_1_3 {
+	margin-left: 33.33333333333333%;
+}
+
+.push_lap_5_12 {
+	margin-left: 41.66666666666667%;
+}
+
+.push_lap_1_2 {
+	margin-left: 50%;
+}
+
+.push_lap_7_12 {
+	margin-left: 58.333333333333336%;
+}
+
+.push_lap_2_3 {
+	margin-left: 66.66666666666666%;
+}
+
+.push_lap_3_4 {
+	margin-left: 75%;
+}
+
+.push_lap_5_6 {
+	margin-left: 83.33333333333334%;
+}
+
+.push_lap_11_12 {
+	margin-left: 91.66666666666666%;
+}
+
+}
+
+@media screen and (min-width: 63.75em) {
+
+/* --------------------------- Columns */
+
+.desk_1_12 {
+	width: 8.333334%;
+}
+
+.desk_1_8 {
+	width: 12.5%;
+}
+
+.desk_1_6 {
+	width: 16.666667%;
+}
+
+.desk_1_5 {
+	width: 20%;
+}
+
+.desk_1_4 {
+	width: 25%;
+}
+
+.desk_1_3 {
+	width: 33.333334%;
+}
+
+.desk_4_10 {
+	width: 40%;
+}
+
+.desk_5_12 {
+	width: 41.666667%;
+}
+
+.desk_1_2 {
+	width: 50%;
+}
+
+.desk_7_12 {
+	width: 58.333334%;
+}
+
+.desk_6_10 {
+	width: 60%;
+}
+
+.desk_2_3 {
+	width: 66.666667%;
+}
+
+.desk_3_4 {
+	width: 75%;
+}
+
+.desk_4_5 {
+	width: 80%;
+}
+
+.desk_5_6 {
+	width: 83.333334%;
+}
+
+.desk_7_8 {
+	width: 87.5%;
+}
+
+.desk_11_12 {
+	width: 91.666667%;
+}
+
+.desk_full {
+	width: 100%;
+}
+
+/* --------------------------- Offsets */
+
+.push_desk_1_12 {
+	margin-left: 8.333333333333332%;
+}
+
+.push_desk_1_6 {
+	margin-left: 16.666666666666664%;
+}
+
+.push_desk_1_4 {
+	margin-left: 25%;
+}
+
+.push_desk_1_3 {
+	margin-left: 33.33333333333333%;
+}
+
+.push_desk_5_12 {
+	margin-left: 41.66666666666667%;
+}
+
+.push_desk_1_2 {
+	margin-left: 50%;
+}
+
+.push_desk_7_12 {
+	margin-left: 58.333333333333336%;
+}
+
+.push_desk_2_3 {
+	margin-left: 66.66666666666666%;
+}
+
+.push_desk_3_4 {
+	margin-left: 75%;
+}
+
+.push_desk_5_6 {
+	margin-left: 83.33333333333334%;
+}
+
+.push_desk_11_12 {
+	margin-left: 91.66666666666666%;
+}
+
+}
+
+@media print {
+
+* {
+	border: 0 !important;
+	color: #000 !important;
+	font-family: Arial, Helvetica, sans-serif !important;
+	text-shadow: none !important;
+	box-shadow: none !important;
+}
+
+html,
+body {
+	background: #fff !important;
+}
+
+p,
+li {
+	page-break-inside: avoid;
+}
+
+.wrapper {
+	max-width: 100%;
+	min-width: 100%;
+}
+
+}
+

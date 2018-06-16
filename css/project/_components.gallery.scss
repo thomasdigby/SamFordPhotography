@@ -1,0 +1,34 @@
+﻿
+//	GALLERY
+//----------------------------------------------------------------------
+
+.gallery {
+	height: 100%;
+	width: 100%;
+}
+.gallery .swiper-slide {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.gallery__image {
+	max-height: 60vh;
+	max-width: 80vw;
+}
+
+.gallery__button {
+	@extend %text-hidden;
+	position: fixed;
+	top: 80px;
+	left: 0;
+	width: 50%;
+	height: calc(100% - 150px);
+	z-index: 10;
+	&:focus {
+		outline: none;
+	}
+}
+.gallery__button--next {
+	left: auto;
+	right: 0;
+}

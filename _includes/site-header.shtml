@@ -1,0 +1,24 @@
+<header class="site-header">
+	<h1 class="text-small">
+		Sam Ford<br />Photographer
+	</h1>
+	<ul class="list-plain list-plain--inline text-small">
+		<li class="list-plain__list-item">
+			<a href="/" class="link-standard">Portraits</a>
+		</li>
+		<li class="list-plain__list-item">
+			<a href="/treetop-flyers/" class="link-standard">Treetop Flyers</a>
+		</li>
+	</ul>
+	<ul class="list-plain list-plain--inline text-small">
+		<li class="list-plain__list-item">
+			<a class="link-standard" href="tel:07774530487">07774530487</a>
+		</li>
+		<li class="list-plain__list-item">
+			<a class="link-standard" href="mailto:samfordsamford@live.com">samfordsamford@live.com</a>
+		</li>
+		<li class="list-plain__list-item">
+			<a class="link-standard" href="/about/">About</a>
+		</li>
+	</ul>
+</header>

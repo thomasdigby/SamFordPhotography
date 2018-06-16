@@ -1,0 +1,29 @@
+﻿//----------------------------------------------------------------------
+//	TOOLS
+//	Placeholders
+//----------------------------------------------------------------------
+
+//	Text hidden
+//-----------------------------------
+%text-hidden {
+	overflow: hidden;
+	text-indent: 200%;
+	white-space: nowrap;
+}
+
+//	Clearfix
+//-----------------------------------
+%clearfix {
+	&::after {
+		clear: both;
+		content: '';
+		display: table;
+	}
+}
+
+//	Text overflow
+//-----------------------------------
+%text-overflow {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}

@@ -1,7 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta charset="utf-8">
 
@@ -20,19 +19,36 @@
 	<meta name="twitter:title" content="Sam Ford Photography">
 	<meta name="twitter:description" content="Portfolio website of Sam Ford">
 
-	<link rel="stylesheet" href="/css/dist/style.min.css" />
-	<script src="/scripts/dist/head.min.js"></script>
-
+	<link rel="stylesheet" href="/css/dist/global.min.css" />
 </head>
 <body>
-
-	<header>
-		<h1>Sam Ford<br />Photographer</h1>
+	<header class="site-header">
+		<h1 class="text-small">
+			Sam Ford<br />Photographer
+		</h1>
+		<ul class="list-plain list-plain--inline text-small">
+			<li class="list-plain__list-item">
+				<a href="/" class="link-standard">Portraits</a>
+			</li>
+			<li class="list-plain__list-item">
+				<a href="/treetop-flyers/" class="link-standard">Treetop Flyers</a>
+			</li>
+		</ul>
+		<ul class="list-plain list-plain--inline text-small">
+			<li class="list-plain__list-item">
+				<a class="link-standard" href="tel:07774530487">07774530487</a>
+			</li>
+			<li class="list-plain__list-item">
+				<a class="link-standard" href="mailto:samfordsamford@live.com">samfordsamford@live.com</a>
+			</li>
+			<li class="list-plain__list-item">
+				<a class="link-standard" href="/about/">About</a>
+			</li>
+		</ul>
 	</header>
-
-	<section class="main_content">
-		<h2>Clients include:</h2>
-		<ul class="list_reset list_clients">
+	<main class="site-main site-main--content">
+		<h2 class="text-small">Clients include:</h2>
+		<ul class="list-simple">
 			<li>
 				Neighbour UK
 			</li>
@@ -42,7 +58,7 @@
 			<li>
 				Fresh Britain
 			</li>
-			<li class="separator">
+			<li class="list-simple__list-item--spaced">
 				ATC Management
 			</li>
 			<li>
@@ -54,7 +70,7 @@
 			<li>
 				Puma/BWGH
 			</li>
-			<li class="separator">
+			<li class="list-simple__list-item--spaced">
 				Pretty Green Clothing
 			</li>
 			<li>
@@ -67,22 +83,9 @@
 				Richard Dinsdale
 			</li>
 		</ul>
-	</section>
-
-	<footer>
-		<p data-image-caption></p>
-		<ul class="list_reset list_inline">
-			<li>
-				Talk: <a href="tel:07774530487">07774530487</a>
-			</li>
-			<li>
-				Mail: <a href="mailto:samfordsamford@live.com">samfordsamford@live.com</a>
-			</li>
-		</ul>
-	</footer>
-
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="/scripts/vendor/jquery-1.8.3.min.js"><\/script>')</script>
-	<script src="/scripts/dist/all.js"></script>
+	</main>
+	<script src="/js/_vendor/packery.pkgd.min.js"></script>
+	<script src="/js/_vendor/imagesloaded.pkgd.min.js"></script>
+	<script src="/js/dist/global.js"></script>
 </body>
 </html>

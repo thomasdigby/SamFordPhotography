@@ -1,0 +1,44 @@
+﻿//----------------------------------------------------------------------
+//	GENERIC
+//	Document
+//----------------------------------------------------------------------
+
+//	Box-sizing
+//-----------------------------------
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+
+
+
+//	Document
+//-----------------------------------
+
+html {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	height: 100%;
+}
+body {
+	color: $dark-grey;
+	font-family: $sans-font;
+	font-size: 100%; /* 16px */
+	height: 100%;
+	line-height: $doc-line-height; /* 20px */
+}
+
+
+
+
+//	Text selection
+//-----------------------------------
+
+::selection {
+	background-color: rgba($mid-grey, 0.8);
+	color: #fff;
+	text-shadow: none;
+}

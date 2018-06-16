@@ -1,0 +1,36 @@
+﻿
+//	MASTER
+//----------------------------------------------------------------------
+
+//	Settings
+@import 'project/settings.global';
+
+//	Tools
+@import 'project/tools.placeholders';
+@import 'project/tools.mixins';
+@import 'project/tools.icons';
+
+//	Generic
+@import 'project/generic.reset';
+@import 'project/generic.document';
+
+//	Vendor
+@import '_vendor/swiper';
+
+//	Components
+@import 'project/components.image-filter';
+@import 'project/components.links-buttons';
+@import 'project/components.lists';
+@import 'project/components.media';
+@import 'project/components.containers';
+@import 'project/components.gallery';
+@import 'project/components.site-header';
+@import 'project/components.site-footer';
+@import 'project/components.text';
+
+//	Utility
+@import 'project/utility.color';
+@import 'project/utility.display';
+@import 'project/utility.layout';
+@import 'project/utility.type';
+@import 'project/utility.print';

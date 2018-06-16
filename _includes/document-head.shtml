@@ -1,0 +1,19 @@
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="utf-8">
+
+<meta name="description" content="Sam Ford Photography">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sam Ford Photography</title>
+
+<!-- open graph -->
+<meta property="og:title" content="Sam Ford Photography" />
+<meta property="og:description" content="Portfolio website of Sam Ford" />
+
+<!-- twitter card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@samfordsamford">
+<meta name="twitter:title" content="Sam Ford Photography">
+<meta name="twitter:description" content="Portfolio website of Sam Ford">
+
+<link rel="stylesheet" href="/css/dist/global.min.css" />

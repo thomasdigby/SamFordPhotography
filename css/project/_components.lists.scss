@@ -1,0 +1,90 @@
+﻿//	LISTS
+//----------------------------------------------------------------------
+
+
+//	Bypass
+.list-bypass {
+	left: 0;
+	position: fixed;
+	text-decoration: none;
+	top: 0;
+	z-index: 50;
+}
+.list-bypass__link {
+	background: $dark-grey;
+	color: #fff;
+	display: inline-block;
+	left: 0;
+	padding: 0.5em; /* 8px */
+	position: fixed;
+	top: -200%;
+	white-space: nowrap;
+	z-index: 50;
+	&:focus {
+		top: 0;
+	}
+}
+
+//	Plain
+.list-plain--inline {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 0;
+}
+.list-plain--inline .list-plain__list-item:not(:last-child) {
+	margin-right: 1.25rem; /* 20px */
+}
+
+//	Simple
+.list-simple {
+	@extend .text-small;
+	font-style: italic;
+}
+.list-simple__list-item--spaced {
+	margin-bottom: 0.625rem; /* 10px */
+}
+
+//	Filter
+.list-images {
+	// display: flex;
+	// flex-wrap: wrap;
+}
+.image-list {
+	opacity: 0;
+	transition: opacity $duration $easing;
+	@include mq(499, max) {
+		display: block;
+		height: auto !important;
+	}
+	&.has-loaded {
+		opacity: 1;
+	}
+}
+.image-list img {
+	@include mq(499, max) {
+		left: 0 !important;
+		margin-bottom: 20px;
+		position: relative !important;
+		top: auto !important;
+		width: 100%;
+	}
+	@include mq(500) {
+		width: calc(50% - 24px);
+	}
+	@include mq(800) {
+		width: calc(33.33% - 19px);
+	}
+	@include mq(1200) {
+		max-width: 400px;
+		width: calc(25% - 16px);
+	}
+}
+// .image-list .picked {
+// 	position: fixed;
+// 	left: 10%;
+// 	width: 80%;
+// 	opacity: 1;
+// }
+// .image-list--option-selected img {
+// 	opacity: 0.2;
+// }

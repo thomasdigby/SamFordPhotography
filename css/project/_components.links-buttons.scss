@@ -1,0 +1,11 @@
+﻿//	LINKS
+//----------------------------------------------------------------------
+
+//	Standard link
+.link-standard {
+	@include underline($dark-grey, #fff, 0.875rem);
+	color: $dark-grey;
+	display: inline-block;
+	font-weight: 700;
+	text-decoration: none;
+}

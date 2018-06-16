@@ -1,0 +1,60 @@
+﻿//----------------------------------------------------------------------
+//	SETTINGS
+//	Global
+//----------------------------------------------------------------------
+
+//	Typography
+//-----------------------------------
+
+//	Type baseline
+$doc-font-size: 16; /* 16px */
+$doc-line-height: 1.25; /* 20px */
+
+//	Font stacks
+$sans-font: Helvetica, Arial, sans-serif;
+$serif-font: Georgia, Times, serif;
+// $headline-font: 'Passion One', $sans-font;
+
+
+
+
+//	Animation
+//-----------------------------------
+
+//	Transition
+$duration: 125ms;
+$easing: ease-out;
+$easing-custom: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+
+
+
+//	Colors/Themes
+//-----------------------------------
+
+//	Tonal
+$dark-grey: #4C4C4C;
+$mid-grey: #7F7F7F;
+$lightest-grey: #ebebeb;
+
+
+
+
+//	Grid
+//-----------------------------------
+
+//	Gutters (in em)
+$gutter-width: 1.25; /* 20px */
+
+
+
+
+//	Responsive
+//-----------------------------------
+
+//	Fixed-width?
+$responsive: true;
+
+//	Breakpoints (in px)
+$lap: 700;
+$desk: 900;

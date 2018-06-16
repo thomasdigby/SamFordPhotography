@@ -1,0 +1,3 @@
+<script src="/js/_vendor/packery.pkgd.min.js"></script>
+<script src="/js/_vendor/imagesloaded.pkgd.min.js"></script>
+<script src="/js/dist/global.js"></script>

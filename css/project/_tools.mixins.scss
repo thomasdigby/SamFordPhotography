@@ -1,0 +1,105 @@
+﻿//----------------------------------------------------------------------
+//	TOOLS
+//	Mixins
+//----------------------------------------------------------------------
+
+
+//	Media query
+//-----------------------------------
+/*
+*	$point: breakpoint integer in px
+*	$constraint: Constraint for media query (min/max)
+*	$feature: Media feature of query (width/height)
+*/
+@mixin mq($point, $constraint: min, $feature: width) {
+	@media screen and (#{$constraint}-#{$feature}: $point / $doc-font-size + em) {
+		@content;
+	}
+}
+
+
+//	Two tone background
+//-----------------------------------
+/*
+*	$bottom-color/$top-color: Colors for background
+*/
+@mixin background-vert-split($bottom-color, $top-color) {
+	background-image: linear-gradient(0deg, $top-color 50%, $bottom-color 50%);
+	.no-cssgradients & {
+		background-image: shape-rectangle-split($bottom-color, $top-color);
+		background-position: center;
+		background-repeat: repeat-x;
+	}
+}
+
+
+//	Underline
+//-----------------------------------
+/*
+*	$foreground-color/$background-color: Colors for text/background
+*	$offset: Offset from baseline
+*	$size: Space around text
+*	$weight: Line weight
+*/
+@mixin underline($foreground-color, $background-color, $offset: 1.125em, $size: 1px, $weight: 1px) {
+	background-image: linear-gradient(to left, $foreground-color 50%, $foreground-color 50%);
+	background-position: 0 $offset;
+	background-repeat: repeat-x;
+	background-size: 1px $weight;
+	text-shadow: $size 0 0 $background-color, -$size 0 0 $background-color;
+}
+
+
+//	Fluid type
+//-----------------------------------
+/*
+*	$min-vw: Viewport unit to start scaling
+*	$max-vw: Viewport unit to end scaling
+*	$min-font-size: Font-size to scale from
+*	$max-font-size: Font-size to scale to
+*/
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+	$u1: unit($min-vw);
+	$u2: unit($max-vw);
+	$u3: unit($min-font-size);
+	$u4: unit($max-font-size);
+	@if ($u1 == $u2 and $u1 == $u3 and $u1 == $u4) {
+		font-size: $min-font-size;
+		@media screen and (min-width: $min-vw) {
+			font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+		}
+		@media screen and (min-width: $max-vw) {
+			font-size: $max-font-size;
+		}
+	}
+	@else {
+		@error "Detected mixed units. Please use the same units for all parameters.";
+	}
+}
+
+
+//	Animation
+//-----------------------------------
+/*
+*	$name: Keyframes animation identifier
+*/
+@mixin animation($name, $duration: 250ms, $iteration-count: 1, $delay: 0, $timing-func: $easing) {
+	animation-delay: $delay;
+	animation-duration: $duration;
+	animation-iteration-count: $iteration-count;
+	animation-name: $name;
+	animation-play-state: running;
+	animation-timing-function: $timing-func;
+}
+
+
+//	Utilities
+//-----------------------------------
+/* Remove hash from hex color string and add as escaped character */
+@function color-encode($color) {
+	@return '%23' + str-slice(#{$color}, 2, -1)
+}
+/* Strip unit from value (px/em etc.) */
+@function strip-unit($value) {
+	@return $value / ($value * 0 + 1);
+}
